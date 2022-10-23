@@ -32,4 +32,17 @@ public class HomeController {
 
 		return restTemplate.getForObject("http://PRODUCT-MICROSERVICE/productlist", Map.class);
 	}
+
+	@GetMapping("/getprice")
+	public String price() {
+
+		return restTemplate.getForObject("http://PRICE-MICROSERVICE/price", String.class);
+	}
+
+	@SuppressWarnings("unchecked")
+	@GetMapping("/getpricelist")
+	public Map<String, String> pricelist() {
+
+		return restTemplate.getForObject("http://PRICE-MICROSERVICE/pricelist", Map.class);
+	}
 }
